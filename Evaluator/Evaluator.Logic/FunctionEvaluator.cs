@@ -11,19 +11,43 @@ public class FunctionEvaluator
     private static double Calculate(string postfix)
     {
         var stack = new Stack<double>();
-        foreach (var item in postfix)
+        var number = string.Empty;
+
+        for (int i = 0; i < postfix.Length; i++)
         {
-            if (IsOperator(item))
+            var item = postfix[i];
+
+            if (char.IsDigit(item) || item == '.')
             {
-                var operator2 = stack.Pop();
-                var operator1 = stack.Pop();
-                stack.Push(Result(operator1, item, operator2));
+                number += item;
+            }
+            else if (item == ' ')
+            {
+                if (!string.IsNullOrEmpty(number))
+                {
+                    stack.Push(double.Parse(number));
+                    number = string.Empty;
+                }
             }
             else
             {
-                stack.Push(char.GetNumericValue(item));
+                if (!string.IsNullOrEmpty(number))
+                {
+                    stack.Push(double.Parse(number));
+                    number = string.Empty;
+                }
+
+                var b = stack.Pop();
+                var a = stack.Pop();
+                stack.Push(Result(a, item, b));
             }
         }
+
+        if (!string.IsNullOrEmpty(number))
+        {
+            stack.Push(double.Parse(number));
+        }
+
         return stack.Pop();
     }
 
@@ -44,47 +68,57 @@ public class FunctionEvaluator
     {
         var stack = new Stack<char>();
         var postfix = string.Empty;
-        foreach (var item in infix)
+        var number = string.Empty;
+
+        for (int i = 0; i < infix.Length; i++)
         {
-            if (IsOperator(item))
+            var item = infix[i];
+
+            if (char.IsDigit(item) || item == '.')
             {
-                if (stack.Count == 0)
-                {
-                    stack.Push(item);
-                }
-                else
-                {
-                    if (item == ')')
-                    {
-                        do
-                        {
-                            postfix += stack.Pop();
-                        } while (stack.Peek() != '(');
-                        stack.Pop();
-                    }
-                    else
-                    {
-                        if (PriorityExpression(item) > PriorityStack(stack.Peek()))
-                        {
-                            stack.Push(item);
-                        }
-                        else
-                        {
-                            postfix += stack.Pop();
-                            stack.Push(item);
-                        }
-                    }
-                }
+                number += item;
             }
             else
             {
-                postfix += item;
+                if (!string.IsNullOrEmpty(number))
+                {
+                    postfix += number + " ";
+                    number = string.Empty;
+                }
+
+                if (IsOperator(item))
+                {
+                    if (item == ')')
+                    {
+                        while (stack.Peek() != '(')
+                            postfix += stack.Pop() + " ";
+                        stack.Pop(); // remove '('
+                    }
+                    else
+                    {
+                        while (stack.Count > 0 && PriorityExpression(item) <= PriorityStack(stack.Peek()))
+                            postfix += stack.Pop() + " ";
+
+                        stack.Push(item);
+                    }
+                }
+                else if (item == '(')
+                {
+                    stack.Push(item);
+                }
             }
         }
-        do
+
+        if (!string.IsNullOrEmpty(number))
         {
-            postfix += stack.Pop();
-        } while (stack.Count > 0);
+            postfix += number + " ";
+        }
+
+        while (stack.Count > 0)
+        {
+            postfix += stack.Pop() + " ";
+        }
+
         return postfix;
     }
 
