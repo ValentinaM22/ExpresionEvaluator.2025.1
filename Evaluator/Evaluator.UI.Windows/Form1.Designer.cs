@@ -49,6 +49,7 @@
             btnCloseParenthesis = new Button();
             btnClean = new Button();
             btnDelete = new Button();
+            btnPoint = new Button();
             SuspendLayout();
             // 
             // txtDisplay
@@ -197,7 +198,7 @@
             btnDot.BackColor = Color.FromArgb(255, 128, 128);
             btnDot.Location = new Point(17, 247);
             btnDot.Name = "btnDot";
-            btnDot.Size = new Size(210, 46);
+            btnDot.Size = new Size(135, 46);
             btnDot.TabIndex = 13;
             btnDot.Text = "0";
             btnDot.UseVisualStyleBackColor = false;
@@ -234,6 +235,7 @@
             btnPow.TabIndex = 16;
             btnPow.Text = "^";
             btnPow.UseVisualStyleBackColor = false;
+            btnPow.Click += btnPow_Click;
             // 
             // btnResult
             // 
@@ -266,6 +268,7 @@
             btnClean.TabIndex = 19;
             btnClean.Text = "Clean";
             btnClean.UseVisualStyleBackColor = false;
+            btnClean.Click += btnClean_Click;
             // 
             // btnDelete
             // 
@@ -276,12 +279,26 @@
             btnDelete.TabIndex = 20;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnPoint
+            // 
+            btnPoint.BackColor = Color.FromArgb(255, 128, 128);
+            btnPoint.Location = new Point(167, 247);
+            btnPoint.Name = "btnPoint";
+            btnPoint.Size = new Size(60, 46);
+            btnPoint.TabIndex = 21;
+            btnPoint.Text = ".";
+            btnPoint.UseVisualStyleBackColor = false;
+            btnPoint.Click += btnPoint_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Fuchsia;
             ClientSize = new Size(468, 322);
+            Controls.Add(btnPoint);
             Controls.Add(btnDelete);
             Controls.Add(btnClean);
             Controls.Add(btnCloseParenthesis);
@@ -333,5 +350,6 @@
         private Button btnCloseParenthesis;
         private Button btnClean;
         private Button btnDelete;
+        private Button btnPoint;
     }
 }

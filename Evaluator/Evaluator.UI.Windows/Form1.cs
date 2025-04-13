@@ -96,5 +96,25 @@ namespace Evaluator.UI.Windows
         {
             txtDisplay.Text += "=";
         }
+
+        private void btnPoint_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += ".";
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text = txtDisplay.Text.Substring(0, txtDisplay.Text.Length - 1);
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text = string.Empty;
+        }
+
+        private void btnPow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
