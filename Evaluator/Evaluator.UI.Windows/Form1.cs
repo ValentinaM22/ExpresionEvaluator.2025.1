@@ -1,3 +1,5 @@
+using Evaluator.Logic;
+
 namespace Evaluator.UI.Windows
 {
     public partial class Form1 : Form
@@ -94,7 +96,7 @@ namespace Evaluator.UI.Windows
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text += "=";
+            txtDisplay.Text += $"¨{FunctionEvaluator.Evaluate(txtDisplay.Text)}";
         }
 
         private void btnPoint_Click(object sender, EventArgs e)
