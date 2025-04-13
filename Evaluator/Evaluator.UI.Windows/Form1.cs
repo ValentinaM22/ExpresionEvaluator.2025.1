@@ -26,5 +26,40 @@ namespace Evaluator.UI.Windows
         {
             txtDisplay.Text += "9";
         }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "4";
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "5";
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "6";
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "1";
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "2";
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "3";
+        }
+
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "0";
+        }
     }
 }
