@@ -116,7 +116,7 @@ namespace Evaluator.UI.Windows
 
         private void btnPow_Click(object sender, EventArgs e)
         {
-
+            txtDisplay.Text += "^";
         }
     }
 }
