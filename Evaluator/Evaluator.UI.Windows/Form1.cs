@@ -96,7 +96,7 @@ namespace Evaluator.UI.Windows
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text += $"¨{FunctionEvaluator.Evaluate(txtDisplay.Text)}";
+            txtDisplay.Text += $"={FunctionEvaluator.Evaluate(txtDisplay.Text)}";
         }
 
         private void btnPoint_Click(object sender, EventArgs e)
