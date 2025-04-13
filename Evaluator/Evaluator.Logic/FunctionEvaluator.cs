@@ -96,8 +96,12 @@ public class FunctionEvaluator
                     }
                     else
                     {
-                        while (stack.Count > 0 && PriorityExpression(item) <= PriorityStack(stack.Peek()))
+                        while (stack.Count > 0 &&
+                              ((item != '^' && PriorityExpression(item) <= PriorityStack(stack.Peek())) ||
+                               (item == '^' && PriorityExpression(item) < PriorityStack(stack.Peek()))))
+                        {
                             postfix += stack.Pop() + " ";
+                        }
 
                         stack.Push(item);
                     }
