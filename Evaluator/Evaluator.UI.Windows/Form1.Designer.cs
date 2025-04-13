@@ -168,6 +168,7 @@
             btnMultiply.TabIndex = 12;
             btnMultiply.Text = "*";
             btnMultiply.UseVisualStyleBackColor = false;
+            btnMultiply.Click += btnMultiply_Click;
             // 
             // btnPlus
             // 
@@ -178,6 +179,7 @@
             btnPlus.TabIndex = 11;
             btnPlus.Text = "+";
             btnPlus.UseVisualStyleBackColor = false;
+            btnPlus.Click += btnPlus_Click;
             // 
             // btnDivide
             // 
@@ -188,6 +190,7 @@
             btnDivide.TabIndex = 10;
             btnDivide.Text = "/";
             btnDivide.UseVisualStyleBackColor = false;
+            btnDivide.Click += btnDivide_Click;
             // 
             // btnDot
             // 
@@ -209,6 +212,7 @@
             btnMinus.TabIndex = 14;
             btnMinus.Text = "-";
             btnMinus.UseVisualStyleBackColor = false;
+            btnMinus.Click += btnMinus_Click;
             // 
             // btnOpenParenthesis
             // 
@@ -219,6 +223,7 @@
             btnOpenParenthesis.TabIndex = 15;
             btnOpenParenthesis.Text = "(";
             btnOpenParenthesis.UseVisualStyleBackColor = false;
+            btnOpenParenthesis.Click += btnOpenParenthesis_Click;
             // 
             // btnPow
             // 
@@ -239,6 +244,7 @@
             btnResult.TabIndex = 17;
             btnResult.Text = "=";
             btnResult.UseVisualStyleBackColor = false;
+            btnResult.Click += btnResult_Click;
             // 
             // btnCloseParenthesis
             // 
@@ -249,6 +255,7 @@
             btnCloseParenthesis.TabIndex = 18;
             btnCloseParenthesis.Text = ")";
             btnCloseParenthesis.UseVisualStyleBackColor = false;
+            btnCloseParenthesis.Click += btnCloseParenthesis_Click;
             // 
             // btnClean
             // 

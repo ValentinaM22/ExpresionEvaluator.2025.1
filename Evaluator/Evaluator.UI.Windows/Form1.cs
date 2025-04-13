@@ -61,5 +61,40 @@ namespace Evaluator.UI.Windows
         {
             txtDisplay.Text += "0";
         }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "/";
+        }
+
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "*";
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "-";
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "+";
+        }
+
+        private void btnOpenParenthesis_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "(";
+        }
+
+        private void btnCloseParenthesis_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += ")";
+        }
+
+        private void btnResult_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "=";
+        }
     }
 }
