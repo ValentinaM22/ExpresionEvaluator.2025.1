@@ -69,6 +69,7 @@
             btn7.TabIndex = 1;
             btn7.Text = "7";
             btn7.UseVisualStyleBackColor = false;
+            btn7.Click += btn7_Click;
             // 
             // btn8
             // 
@@ -79,6 +80,7 @@
             btn8.TabIndex = 2;
             btn8.Text = "8";
             btn8.UseVisualStyleBackColor = false;
+            btn8.Click += btn8_Click;
             // 
             // btn9
             // 
@@ -89,6 +91,7 @@
             btn9.TabIndex = 3;
             btn9.Text = "9";
             btn9.UseVisualStyleBackColor = false;
+            btn9.Click += btn9_Click;
             // 
             // btn3
             // 

@@ -11,5 +11,20 @@ namespace Evaluator.UI.Windows
         {
 
         }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "7";
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "8";
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "9";
+        }
     }
 }
